@@ -1,9 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 interface ProductCardProps {
   product: {
-    image: string,
+    image_url: string,
     price: string,
     name: string,
     description: string
@@ -17,7 +16,7 @@ export default function ProductCard({ product }: ProductCardProps ) {
       <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
         <img
           alt="product image"
-          src={product.image}
+          src={product.image_url}
           
           className={'object-cover duration-700 ease-in-out group-hover:opacity-75	'}
         />
