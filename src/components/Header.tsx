@@ -1,24 +1,42 @@
-import Image from 'next/image'
-import Link from 'next/link'
+'use client'
+
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const Header = () => {
+  const [currentImage, setCurrentImage] = useState(1);
+
+  useEffect(() => {
+    // Define a função que altera a imagem a cada 5 segundos
+    const changeImage = () => {
+      setCurrentImage((prevImage) => (prevImage % 3) + 1);
+    };
+
+    const intervalId = setInterval(changeImage, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []); 
+
+  const imagePath = `/hero${currentImage}.jpg`;
+
   return (
     <header className="relative">
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
       <div className="mx-auto">
         <div className="relative shadow-xl sm:overflow-hidden">
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 ">
             <Image
               priority
               fill
               className="h-full w-full object-cover"
-              src='/hero.jpg'
+              src={imagePath}
               alt="Coffee grinder"
             />
             <div className="absolute inset-0 bg-orange-100 mix-blend-multiply" />
           </div>
           <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-            <p className="relative left-0 right-0 mx-auto mt-5 max-w-xl text-center text-xl  font-semibold uppercase tracking-wide text-orange-600">
+            <p className="relative left-0 right-0 mx-auto mt-5 max-w-xl text-center text-xl  font-semibold uppercase tracking-wide text-orange-500">
               The Coffee House
             </p>
             <h1 className="mt-1 text-center font-bold uppercase text-gray-900 sm:text-5xl sm:tracking-tight lg:text-7xl">
