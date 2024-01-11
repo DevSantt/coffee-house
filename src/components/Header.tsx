@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const Header = () => {
   return (
@@ -26,11 +27,13 @@ export const Header = () => {
             </h1>
 
             <div className="mx-auto mt-10 max-w-xs sm:flex sm:max-w-none sm:justify-center">
-              <button
-                className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-orange-600 shadow-sm hover:bg-orange-100 sm:px-8"
-              >
-                Shop coffees
-              </button>
+              <Link href='#buyCoffee' >
+                <button
+                  className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-orange-600 shadow-sm hover:bg-orange-100 sm:px-8"
+                >
+                  Shop coffees
+                </button>
+              </Link>
             </div>
           </div>
         </div>
