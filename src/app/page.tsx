@@ -5,11 +5,13 @@ import ProductCard from '@/components/ProductCard'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-export default  function Home() {
+export default function Home() {
   const [data, setData] = useState([])
-  useEffect(()=>{
-    axios.get('https://fake-coffee-api.vercel.app/api').then(res => setData(res.data))
-  }, [])
+  useEffect(() => {
+    axios
+      .get('/api/products')
+      .then(res => setData(res.data.products))
+  })
   return (
     <>
       <Header />
@@ -25,7 +27,8 @@ export default  function Home() {
         </div>
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {data &&
-            data.map((product, index: number) => (
+          //@ts-ignore
+            data.map((product, index) => (
               <ProductCard product={product} key={index} />
             ))}
         </div>
