@@ -3,3 +3,4 @@ export async function GET() {
   const products = await res.json()
   return Response.json({products})
 }
+
