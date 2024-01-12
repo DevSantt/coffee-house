@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='scroll-smooth'>
-      <body className={`${montserrat.variable} font-sans`}>
+      <body className={`${montserrat.variable} font-sans bg-black`}>
           {children}
         <Footer />
       </body>

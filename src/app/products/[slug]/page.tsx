@@ -22,8 +22,8 @@ export default function Product({ params }: { params: { slug: number } }) {
             width={560}
             height={640}
           />
-          <div className="mt-10 flex flex-col sm:mt-0 sm:ml-10">
-            <h1 className="mt-1 text-4xl font-bold uppercase text-gray-900 sm:text-5xl sm:tracking-tight lg:text-5xl">
+          <div className="mt-10 flex flex-col sm:mt-0 sm:ml-10 text-white">
+            <h1 className="mt-1 text-4xl font-bold uppercase text-white sm:text-5xl sm:tracking-tight lg:text-5xl">
               {product?.name}
             </h1>
             <h1 className="mt-3 text-4xl font-bold text-gray-500 sm:text-3xl sm:tracking-tight lg:text-3xl">
