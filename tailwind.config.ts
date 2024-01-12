@@ -1,16 +1,28 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    fontFamily: {
-      sans: ['var(--font-montserrat)'],
+    extend: {
+      colors: {
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        accent: "var(--accent)",
+        white: "var(--white)",
+        night: "var(--night)"
+      },
     },
-   },
-  plugins: [require('@tailwindcss/aspect-ratio')],
-}
-export default config
+    fontFamily: {
+      sans: ["var(--font-montserrat)"],
+    },
+  },
+  plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    require("tailwindcss-animated"),
+  ],
+};
+export default config;
